@@ -20,8 +20,8 @@ Users can:
 - Shows statistics and visualizations based on trends and data analysis.
 
 ## Technical Requirements
-- Python 3.6+ and Django 3 compatibility.
-- Exception handling with user-friendly error messages.
-- PostgreSQL for production and SQLite for development database connectivity.
-- Easy-to-use interface with simple input forms and easy to follow instructions.
+- Python 3.6+ and Django 3 compatibility
+- Exception handling with user-friendly error messages
+- PostgreSQL for production and SQLite for development database connectivity
+- Easy-to-use interface with simple input forms and easy to follow instructions
 - Code documentation and automated tests hosted on GitHub (includes "requirements.txt" for easy project setup).
