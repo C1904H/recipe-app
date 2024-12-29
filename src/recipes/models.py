@@ -4,7 +4,7 @@ class Recipe(models.Model):
   name= models.CharField(max_length=50)
   ingredients= models.TextField()
   cooking_time= models.PositiveIntegerField(help_text="Cooking time in minutes")
-  difficulty= models.CharField(max_length=20) 
+  difficulty= models.CharField(max_length=20, editable=False, null=True, blank=True) 
   description= models.TextField()
 
   def calculate_difficulty(self):
