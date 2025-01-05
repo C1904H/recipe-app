@@ -38,4 +38,8 @@ class RecipeModelTest(TestCase):
     recipe.ingredients = 'Ingredient1, Ingredient2'
     recipe.save()
     self.assertEqual(recipe.difficulty, 'Intermediate')
-    
+
+  def test_get_absolute_url(self):
+       recipe = Recipe.objects.get(id=1)
+       self.assertEqual(recipe.get_absolute_url(), '/list/1')
+  

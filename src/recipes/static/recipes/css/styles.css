@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: url("../images/recipeApp.jpg");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #0e1c1c;
+  margin-top: 10px;
+}
+
+.main-header {
+  text-align: center;
+  color: #002028;
+}
+
+.template-image {
+  background-image: url("../images/plain_background.png");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  position: relative;
+}
+
+a:link {
+  color: whitesmoke;
+}
+
+a:visited {
+  color: whitesmoke;
+}
+
+a:active {
+  color: #fddde6;
+}
+
+.recipe-container {
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-wrapper {
+  text-decoration: none;
+  display: flex;
+  position: relative;
+}
+
+.recipes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  max-width: 600px;
+  padding: 20px;
+  padding-bottom: 25px;
+  background-color: rgb(7, 67, 67, 0.8);
+  border-radius: 20px;
+  border: 1px solid #333;
+  margin: auto;
+  margin-bottom: 30px;
+  position: relative;
+  box-sizing: border-box;
+  }
+
+.recipe-image {
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-right: 10px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .detail-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    padding: 10px;
+    padding-bottom: 20px;
+    background-color: rgb(7, 67, 67, 0.8);
+    border-radius: 20px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    box-sizing: border-box;
+    color: whitesmoke;
+   }
+
+  .recipe-image-detail {
+      border: 1px solid #333;
+      border-radius: 8px;
+      width: 80%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+  }
+
+  .back-button {
+    border-radius: 12px;
+    background-color: #E2AB46;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    cursor: pointer;
+    align-items: flex-end;
+    text-decoration: none;
+  }

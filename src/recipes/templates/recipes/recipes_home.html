@@ -1,9 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
-   <title>
-       Recipes Home
-   </title>
-   <body>
-       Welcome to the Recipes App!
-   </body>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+    <title>Recipes Home</title>
+  </head>
+
+  <body>
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1 style="font-size: 50px">Welcome to the Recipe App!</h1>
+      </div>
+    </div>
+  </body>
 </html>
