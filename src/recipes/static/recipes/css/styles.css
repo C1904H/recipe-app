@@ -19,11 +19,12 @@ body {
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 15%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #0e1c1c;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  padding: 20px;
 }
 
 /* recipes list styling */
@@ -182,20 +183,34 @@ a:active {
 
 /* login page styling */
 .login-container {
-  padding-top: 50%;
+  padding-top: 20vh;
   margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
 }
 
 .login-form {
   border-radius: 8px;
   position: relative;
-  z-index: 1;
   background: transparent;
-  max-width: 360px;
-  margin: 0px auto 100px;
-  padding: 45px;
+  max-width: 360px; 
+  margin: 0px auto 110px;
+  padding: 30px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* logout page styling */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
 }
 
 /* navigation bar styling */
@@ -232,4 +247,16 @@ li a:hover:not(.active) {
 
 .logout-link {
   background-color: #e2ab46
+}
+
+.app-title {
+  float:left;
+  font-family: "Dancing Script", serif;
+  margin-top: 8px;
+  margin-left: 15px;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  color: #e25d46;
 }
