@@ -3,7 +3,8 @@ from django.shortcuts import reverse
 
 class Recipe(models.Model):
   name= models.CharField(max_length=50)
-  ingredients= models.TextField()
+  # ingredients= models.TextField()
+  ingredients= models.CharField(max_length=500, help_text="Separate each ingredient with comma")
   cooking_time= models.PositiveIntegerField(help_text="Cooking time in minutes")
   difficulty= models.CharField(max_length=20, editable=False, null=True, blank=True) 
   description= models.TextField()

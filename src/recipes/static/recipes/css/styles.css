@@ -1,10 +1,13 @@
+/* welcome page styling */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
 }
 
 .hero-image {
-  background-image: url("../images/recipeApp.jpg");
+  background-image: url('../images/recipeApp.jpg');
   background-color: #cccccc;
   height: 100vh;
   background-position: center bottom;
@@ -23,13 +26,25 @@ body {
   margin-top: 10px;
 }
 
+/* recipes list styling */
 .main-header {
   text-align: center;
-  color: #002028;
+  /* color: #002028; */
+  color: #e25d46;
+  margin-top: 55px;
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.recipe-name {
+  color: #e25d46;
+  font-family: "Dancing Script", serif;
 }
 
 .template-image {
-  background-image: url("../images/plain_background.png");
+  background-image: url('../images/plain_background.png');
   background-color: #cccccc;
   height: 100vh;
   background-position: center bottom;
@@ -52,8 +67,18 @@ a:active {
 }
 
 .recipe-container {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; */
   display: flex;
   justify-content: center;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .recipe-wrapper {
@@ -63,14 +88,13 @@ a:active {
 }
 
 .recipes-container {
-  display: flex;
-  flex-direction: row;
+  display: flex; 
   justify-content: center;
   align-items: center;
   width: 95%;
-  max-width: 600px;
-  padding: 20px;
-  padding-bottom: 25px;
+  /* max-width: 600px; */
+  padding: 15px;
+  
   background-color: rgb(7, 67, 67, 0.8);
   border-radius: 20px;
   border: 1px solid #333;
@@ -78,52 +102,134 @@ a:active {
   margin-bottom: 30px;
   position: relative;
   box-sizing: border-box;
-  }
+}
 
 .recipe-image {
-    border: 1px solid #333;
-    border-radius: 8px;
-    margin-right: 10px;
-    display: block;
-    object-fit: cover;
-  }
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-right: 20px;
+  align-self: left;
+  display: block;
+  object-fit: cover;
+}
 
-  .detail-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    max-width: 500px;
-    padding: 10px;
-    padding-bottom: 20px;
-    background-color: rgb(7, 67, 67, 0.8);
-    border-radius: 20px;
-    border: 1px solid #333;
-    margin-bottom: 20px;
-    margin: auto;
-    position: relative;
-    top: 30px;
-    box-sizing: border-box;
-    color: whitesmoke;
-   }
-
-  .recipe-image-detail {
-      border: 1px solid #333;
-      border-radius: 8px;
-      width: 80%;
-      height: auto;
-      display: block;
-      object-fit: cover;
+/* media queries for recipes list on medium screens */
+@media (max-width: 991px) {
+  .recipe-grid {
+    grid-template-columns: 1fr 1fr; 
   }
+}
 
-  .back-button {
-    border-radius: 12px;
-    background-color: #E2AB46;
-    color: white;
-    padding: 14px;
-    font-size: 15px;
-    cursor: pointer;
-    align-items: flex-end;
-    text-decoration: none;
+/* media queries for recipes list on small screens */
+@media (max-width: 769px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;
   }
+}
+
+/* styling for recipe detail page */
+.detail-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 500px;
+  padding: 8px;
+  background-color: rgb(7, 67, 67, 0.8);
+  border-radius: 20px;
+  border: 1px solid #333;
+  margin: auto;
+  position: relative;
+  top: 30px;
+  box-sizing: border-box;
+  color: whitesmoke;
+}
+
+.recipe-image-detail {
+  border: 1px solid #333;
+  border-radius: 8px;
+  width: 80%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* login and logout button styling */
+.login-button {
+  border: none;
+  border-radius: 4px;
+  background-color: #074343;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+.logout-button {
+  border: none;
+  border-radius: 4px;
+  background-color: #e2ab46;
+  color: white;
+  padding: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+/* login page styling */
+.login-container {
+  padding-top: 50%;
+  margin: auto;
+}
+
+.login-form {
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  max-width: 360px;
+  margin: 0px auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* navigation bar styling */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #074343;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #e25d46;
+}
+
+.logout-link {
+  background-color: #e2ab46
+}

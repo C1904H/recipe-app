@@ -8,15 +8,33 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'recipes/css/styles.css' %}"
+    />
     <title>Recipes List</title>
- 
   </head>
+
   <body>
     <div class="template-image">
-      <div class="recipe-container">
-        <div>
-          <h1 class="main-header">Recipes</h1>
+      <!-- navigation bar -->
+      <ul>
+        <li><a class="logout-link" href="{%url 'logout' %}">Logout</a></li>
+        <li>
+          <a
+            class="active"
+            href="{%url 'recipes:list' %}"
+            >Recipes</a
+          >
+        </li>
+      </ul>
+      <!-- <div class="recipe-container"> -->
+        <h1 class="main-header">Recipes</h1>
+        <div class="recipe-grid">
           {% for object in object_list %}
           <div class="recipes-container">
             <a
@@ -32,16 +50,14 @@
                 />
               </div>
               <div>
-                <h3>{{object.name}}</h3>
-                <p class="recipe-description">
-                  {{object.description}}
-                </p>
+                <h2 class="recipe-name">{{object.name}}</h2>
+                <p class="recipe-description">{{object.description}}</p>
               </div>
             </a>
           </div>
           {% endfor %}
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </body>
 </html>
