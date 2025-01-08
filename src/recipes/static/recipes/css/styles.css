@@ -1,9 +1,9 @@
 /* welcome page styling */
 body {
   margin: 0;
-  font-family: "Open Sans", serif;
+  font-family: "Raleway", serif;
   font-optical-sizing: auto;
-  font-weight: 550;
+  font-weight: 450;
 }
 
 .hero-image {
@@ -154,6 +154,22 @@ a:active {
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+.recipe-detail {
+  color: #ffa500;
+}
+
+.recipe-ingredients {
+  color: #ffa500;
+}
+
+.recipe-time {
+  color: #ffa500;
+}
+
+.recipe-diff {
+  color: #ffa500;
 }
 
 /* login and logout button styling */
