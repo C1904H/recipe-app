@@ -1,27 +1,11 @@
 {% extends "base.html" %} 
 {% load static %} 
+
 {% block title %}{{object.name}}Recipe {% endblock %} 
 
 {% block content %}
 <div class="template-image">
-  <!-- navigation bar -->
-  <ul>
-    <li class="app-title">Recipe App</li>
-    <li>
-      <a
-        class="logout-link"
-        href="{%url 'logout' %}"
-        >Logout</a
-      >
-    </li>
-    <li>
-      <a
-        class="active"
-        href="{%url 'recipes:list' %}"
-        >Recipes</a
-      >
-    </li>
-  </ul>
+  
   <br />
   <br />
   <div class="detail-box">
@@ -31,15 +15,11 @@
       src="{{object.pic.url}}"
       class="recipe-image-detail"
     /><br />
-    <b class="recipe-detail">Details: </b> {{object.description}} <br />
-    <br />
-
+    <b class="recipe-detail">Details: </b> {{object.description|safe}} 
     <b class="recipe-ingredients">Ingredients: </b> {{object.ingredients}} <br />
     <br />
-    <b class="recipe-time">Cooking Time: </b> {{object.cooking_time}} mins <br />
-    <br />
-    <b class="recipe-diff">Difficulty: </b> {{object.difficulty}} <br />
-    <br />
+    <b class="recipe-time">Cooking Time:</b> {{object.cooking_time}} mins<br />
+    <b class="recipe-diff">Difficulty:</b> {{object.difficulty}}<br />
   </div>
 </div>
 {% endblock content %}

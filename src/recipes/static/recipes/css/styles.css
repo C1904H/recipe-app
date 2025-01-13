@@ -14,6 +14,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  /* margin-top: 50px; */
 }
 
 .hero-text {
@@ -25,6 +26,41 @@ body {
   color: #0e1c1c;
   /* margin-top: 10px; */
   padding: 20px;
+}
+
+/* home page styling */
+.features-container {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature-title {
+  font-family: "Dancing Script", serif; 
+  color: #e25d46;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+ .feature-item img {
+  max-width: 100%; 
+  height: auto;   
+  border-radius: 5px; 
 }
 
 /* recipes list styling */
@@ -236,7 +272,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #074343;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
 }
@@ -265,14 +301,114 @@ li a:hover:not(.active) {
   background-color: #e2ab46
 }
 
-.app-title {
-  float:left;
+ li a.app-title {
   font-family: "Dancing Script", serif;
-  margin-top: 8px;
+  padding: 5px;
   margin-left: 15px;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   font-size: 30px;
   color: #e25d46;
+}
+
+/* search page styling */
+.search-box {
+  border-radius: 8px;
+  position: relative;
+  background: transparent;
+  max-width: 500px; 
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* General table styling */
+.search-results-table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 18px;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header row styling */
+.search-results-table thead tr {
+  background-color: #104557;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Table cell and row styling */
+.search-results-table th,
+.search-results-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+/* Highlight alternate rows */
+.search-results-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+.search-results-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Link styling */
+.recipe-link {
+  color: #e25d46;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.recipe-link:hover {
+  text-decoration: underline;
+}
+
+/* analytics page styling */
+.analytics {
+  margin: auto;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chart-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.chart-item img {
+  max-width: 100%; 
+  height: auto;   
+  border-radius: 5px; 
+}
+
+
+/* media queries for recipes list on small screens */
+@media (max-width: 769px) {
+  .chart-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
 }

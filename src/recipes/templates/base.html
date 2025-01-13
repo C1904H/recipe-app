@@ -30,6 +30,26 @@
   </head>
 
   <body>
-    {% block content %}{% endblock content %}
+    <!-- navigation bar -->
+  <ul>
+    <li style="float:left">
+      <a class="app-title" href="{%url 'recipes:home' %}" >Recipe App</a>
+    </li>
+    <li>
+      <a
+        class="logout-link"
+        href="{%url 'logout' %}"
+        >Logout</a
+      >
+    </li>
+    <li>
+      <a
+        class="active"
+        href="{%url 'recipes:list' %}"
+        >Recipes</a
+      >
+    </li>
+  </ul>
+  {% block content %}{% endblock content %}
   </body>
 </html>

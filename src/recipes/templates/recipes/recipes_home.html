@@ -2,15 +2,35 @@
 {% load static %} 
 {% block title %}Recipes Home{% endblock %} 
 
-{% block content %}
-<div class="hero-image">
+{% block content %} 
+<div class="hero-image"> 
   <div class="hero-text">
+    
     <h1
       class="main-header"
       style="font-size: 50px"
     >
       Welcome to the Recipe App!
     </h1>
+    <h2>Login to access features:</h2>
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="feature-title">Recipe List</div>
+      <img src="#" alt="image of recipe list page">
+    </div>
+      <div class="feature-item">
+        <div class="feature-title">Recipe Detail</div>
+      <img src="#" alt="image of recipe detail page">
+    </div>
+      <div class="feature-item">
+        <div class="feature-title">Recipe Search</div>
+      <img src="{% static 'recipes/images/search.png' %}" alt="image of recipe search page">
+    </div>
+      <div class="feature-item">
+        <div class="feature-title">Recipe Analytics</div>
+      <img src="#" alt="image of recipe analytics page">
+    </div>
+    </div>
     <a
       href="{%url 'login' %}"
       class="login-button"
@@ -18,4 +38,5 @@
     >
   </div>
 </div>
+
 {% endblock content %}
