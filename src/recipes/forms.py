@@ -1,17 +1,6 @@
 from django import forms
 from .models import Recipe
 
-# SEARCH__CHOICES = [
-#   ('name', 'Recipe Name'),
-#   ('cooking_time', 'Cooking Time (mins)'),
-#   ('difficulty', 'difficulty')
-# ]
-# CHART__CHOICES = (          
-#    ('#1', 'Bar chart'),    
-#    ('#2', 'Pie chart'),
-#    ('#3', 'Line chart')
-# )
-
 class RecipeSearchForm(forms.Form): 
     DIFFICULTY_CHOICES = [
         ('', 'All'),
@@ -38,6 +27,30 @@ class RecipeSearchForm(forms.Form):
         widget=forms.TextInput(attrs={'placeholder': 'Enter desired ingredient'})
     )
 
-  
+class RecipeForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ['name', 'ingredients', 'cooking_time', 'description', 'pic']
+        widgets = {
+            'ingredients': forms.Textarea(attrs={'rows': 3}),
+            'description': forms.Textarea(attrs={'rows': 5, 'placeholder': 'Enter recipe description'}),
+        }
+        labels = {
+            'pic': 'Recipe Image',
+        }
+
+    def clean(self):
+        cleaned_data = super().clean()
+
+        name = cleaned_data.get('name')
+        if name:
+            cleaned_data['name'] = name.capitalize()
+
+        ingredients = cleaned_data.get('ingredients')
+        if ingredients:
+            ingredients_list = [ingredient.strip().capitalize() for ingredient in ingredients.split(',')]
+            cleaned_data['ingredients'] = ', '.join(ingredients_list)
+
+        return cleaned_data
 
 

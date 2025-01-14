@@ -20,6 +20,11 @@
     <br />
     <b class="recipe-time">Cooking Time:</b> {{object.cooking_time}} mins<br />
     <b class="recipe-diff">Difficulty:</b> {{object.difficulty}}<br />
+    <br/>
+    <div clas="button-container">
+    <a href="{% url 'recipes:update' object.pk %}" class="btn btn-primary">Edit Recipe</a>
+    <a href="{% url 'recipes:delete' object.pk %}" class="btn btn-danger">Delete Recipe</a>
   </div>
+</div>
 </div>
 {% endblock content %}

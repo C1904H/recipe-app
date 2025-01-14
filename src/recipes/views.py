@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView   
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView  
 from .models import Recipe
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .forms import RecipeSearchForm
+from .forms import RecipeSearchForm, RecipeForm
 from .utils import generate_charts
 import pandas as pd
 
@@ -17,6 +17,45 @@ class RecipeListView(LoginRequiredMixin, ListView):
 class RecipeDetailView(LoginRequiredMixin, DetailView):
   model = Recipe
   template_name = 'recipes/recipe_detail.html'
+
+class RecipeUpdateView(LoginRequiredMixin, UpdateView):
+  model = Recipe
+  fields = ['name', 'ingredients', 'cooking_time', 'description', 'pic']
+  template_name = 'recipes/recipe_update.html'
+
+  def form_valid(self, form):
+        name = form.cleaned_data.get('name')
+        if name:
+            form.instance.name = name.capitalize()
+
+        ingredients = form.cleaned_data.get('ingredients')
+        if ingredients:
+            ingredients_list = [ingredient.strip().capitalize() for ingredient in ingredients.split(',')]
+            form.instance.ingredients = ', '.join(ingredients_list)
+
+        return super().form_valid(form)
+
+class RecipeDeleteView(LoginRequiredMixin, DeleteView):
+  model = Recipe
+  template_name = 'recipes/recipe_delete.html'
+
+  def get_success_url(self):
+    return ('/list/')
+  
+@login_required
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('recipes:list')  
+    else:
+        form = RecipeForm()
+    
+    context = {
+        'form': form,
+    }
+    return render(request, 'recipes/add_recipe.html', context)
 
 @login_required
 def recipe_search(request):

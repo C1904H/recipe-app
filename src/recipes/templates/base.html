@@ -32,21 +32,23 @@
   <body>
     <!-- navigation bar -->
   <ul>
-    <li style="float:left">
-      <a class="app-title" href="{%url 'recipes:home' %}" >Recipe App</a>
+    <li>
+      <a class="app-title" href="{%url 'recipes:home' %}">Recipe App</a>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Menu</a>
+      <div class="dropdown-content">
+        <a href="{%url 'recipes:list' %}">View All Recipes</a>
+        <a href="{%url 'recipes:search' %}">Search Recipes</a>
+        <a href="{%url 'recipes:add' %}">Add Recipe</a>
+        <a href="{%url 'recipes:analytics' %}">Analytics</a>
+      </div>
     </li>
     <li>
       <a
         class="logout-link"
         href="{%url 'logout' %}"
         >Logout</a
-      >
-    </li>
-    <li>
-      <a
-        class="active"
-        href="{%url 'recipes:list' %}"
-        >Recipes</a
       >
     </li>
   </ul>

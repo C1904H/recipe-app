@@ -5,4 +5,4 @@ register = template.Library()
 
 @register.filter
 def short_description(desc):
-  return desc[:30] + "..."
+  return desc[:50] + "..."
