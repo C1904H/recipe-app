@@ -17,9 +17,7 @@
     /><br />
     <b class="recipe-detail">Details: </b> {{object.description|safe}} 
     <b class="recipe-ingredients">Ingredients: </b> {{object.ingredients}} <br />
-    <br />
-    <b class="recipe-time">Cooking Time:</b> {{object.cooking_time}} mins<br />
-    <b class="recipe-diff">Difficulty:</b> {{object.difficulty}}<br />
+    <p><b class="recipe-time">Cooking Time: </b>{{object.cooking_time}} mins &nbsp; <b class="recipe-diff">Difficulty:</b> {{object.difficulty}}<br /></p>
     <br/>
     <div clas="button-container">
     <a href="{% url 'recipes:update' object.pk %}" class="btn btn-primary">Edit Recipe</a>
