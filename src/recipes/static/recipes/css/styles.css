@@ -132,7 +132,6 @@ a:active {
   width: 95%;
   /* max-width: 600px; */
   padding: 15px;
-  
   background-color: rgb(7, 67, 67, 0.8);
   border-radius: 20px;
   border: 1px solid #333;
@@ -216,13 +215,12 @@ a:active {
   border-radius: 4px;
   background-color: #074343;
   color: white;
-  padding: 12px 30px;
+  padding: 12px 20px;
   font-size: 15px;
   cursor: pointer;
   align-items: flex-end;
   text-decoration: none;
   font-size: 20px;
-  font-weight: 600;
 }
 
 .logout-button {
@@ -358,7 +356,7 @@ li .dropdown {
   background-color: #e2ab46;
 }
 
- li a.app-title {
+ .app-title {
   font-family: "Dancing Script", serif;
   padding: 5px;
   margin-left: 15px;
