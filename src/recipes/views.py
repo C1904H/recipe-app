@@ -106,3 +106,6 @@ def recipe_analytics(request):
 
     return render(request, 'recipes/recipe_analytics.html', {'charts': charts})
 
+@login_required
+def about_page(request):
+   return render(request, 'recipes/about.html')

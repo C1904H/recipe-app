@@ -625,3 +625,23 @@ li .dropdown {
   font-size: 30px;
   font-weight: bold;
 }
+
+.about-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-links a {
+  color: #e25d46;
+  text-decoration: none;
+}
+
+.email-link a {
+  color: #074343;
+  text-decoration: none;
+}
